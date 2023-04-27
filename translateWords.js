@@ -55,10 +55,11 @@ fs.writeFileSync(
 
 
 const timeTaken = performance.now();
+const memory = process.memoryUsage().heapUsed / 1024 / 1024;
 fs.writeFileSync(
-    "./performance.txt",
-    `Time to process: ${timeTaken} ms`
-  );
+  "./performance.txt",
+  `Time to process: ${timeTaken} ms\nMemory used: ${memory.toFixed(2)} mb`
+);
 
   fs.writeFileSync(
     "./githublink.txt",
